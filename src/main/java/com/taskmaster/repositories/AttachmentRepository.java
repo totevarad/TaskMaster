@@ -1,0 +1,9 @@
+package com.taskmaster.repositories;
+
+import com.taskmaster.models.Attachment;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import java.util.List;
+
+public interface AttachmentRepository extends MongoRepository<Attachment, String> {
+    List<Attachment> findByTaskId(String taskId);
+}
